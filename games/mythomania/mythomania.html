@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mythomania Digital</title>
+    <meta name="description" content="Versão digital do clássico jogo da Elma Chips: Mythomania">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+     <!-- SCRIPTS -->
+     <script src="javascript/cartas.js"></script>
+     <script src="javascript/gameoptions.js"></script>
+</head>
+
+<body onload="populate_cards_list_dropdown_menu()">
+    <div class="game-options">
+        <label for="lista-de-cartas">Escolha uma carta:</label> 
+        <select name="lista-de-cartas" id="lista-de-cartas" onchange="update_card(this.value)">
+            <!-- javascript adds the options-->
+        </select>
+    </div>
+
+    <br><br><br>
+
+    <div class="mytho-card" style="position:absolute; margin-top: -100px; margin-left: 280px; -moz-transform: scale(0.8)">
+
+        <div class="carta-fundo">
+            <div class="greek-border"></div>
+
+            <div class="carta-conteudo">
+                <!-- ID e Nome da Carta-->
+                <div class="identificação">
+                    <div class="id-box"><img src="_resources/id-box-longer.png"></div>
+                    <div class="card-id" id="card-id">1</div>
+                    <div class="card-nome" id="card-nome">ZEUS</div>
+                </div>
+
+                <!-- Arte da carta-->
+                <div class="arte">
+                    <img id="card-art" style="width: 100%; height: 96%;" src="_resources/artes/zeus.png">
+                </div>
+                
+                <!-- Poderes da Carta -->
+                <div class="poderes-bg"></div>
+                <div class="poderes">
+                    <div class="coluna">
+                        <div class="poder-icone"><img src="_resources/magia.png" style="margin-left: 2px; margin-top: -10px;"></div>
+                        <div class="poder-magia" id="poder-magia">28</div>
+                        magia
+                    </div>
+                    <div class="coluna">
+                        <div class="poder-icone"><img src="_resources/força.png" style="margin-left: -2px; margin-top: -4px;"></div>
+                        <div class="poder-força" id="poder-forca">28</div>
+                        força
+                    </div>
+                    <div class="coluna">
+                        <div class="poder-icone"><img src="_resources/fogo.png" style="margin-left: -6px; margin-top: -2px;"></div>
+                        <div class="poder-fogo" id="poder-fogo">26</div>
+                        fogo
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
