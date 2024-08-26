@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Idle Game</title>
+    <meta name="description" content="Tibia reimagined as an Idle Game">
+    <meta name="keywords" content="tibia idle game auto clicker incremental">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon.gif">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SCRIPTS -->
+    <script src="scripts/player_data.js"></script>
+    <script src="scripts/tibia_exp_table.js"></script>
+    <script src="scripts/game_items.js"></script>
+    <script src="scripts/game_monsters.js"></script>
+    <script src="scripts/battle_window.js"></script>
+    <script src="scripts/chat_log.js"></script>
+
+</head>
+
+<body onload="start_blank_game()">
+    
+<div class="main-canvas">
+
+    <!-- Fixed Player Status Displays -->
+    <div class="left-portion">
+        <!-- Health/Mana Window  -->
+        <div id="Player HP/MP" class="window-panel" style="width: 160px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Skull_Candle.gif" style="height: 14px; padding-right: 4px;"></div>
+                Health / Mana
+            </div>
+            
+            <div class="window-body">
+                <div style="height: 4px;"></div>
+                <div class="hpmp-parent">
+                    <div class="little-icon"><img src="images/ui/hp.png"></div>
+                    <div class="player-bar-base" style="width: 100%">
+                        <div id="HP-bar" class="HP-bar" style="width: 50%;"></div>
+                        <div id="hp-indicator" class="hpmp-indicator">150/300</div>
+                    </div>
+                </div>
+    
+                <div style="height: 4px;"></div>
+    
+                <div class="hpmp-parent">
+                    <div class="little-icon"><img src="images/ui/mp.png"></div>
+                    <div class="player-bar-base" style="width: 100%">
+                        <div id="MP-bar" class="MP-bar" style="width: 75%;"></div>
+                        <div id="mp-indicator" class="hpmp-indicator">75/100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 8px;"></div>
+
+        <!-- Player Skills Window -->
+        <div id="Player Skills" class="window-panel" style="width: 160px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Chaos_Critical_Dice.gif" style="height: 14px; padding-right: 4px;"></div>
+                Player Skills
+            </div>
+
+            <div class="window-body" style="padding-left: 5px; padding-right: 5px;">
+                <!-- Level -->
+                <div id="Level" class="skill-indicator">
+                    <div class="skill-name">Level</div> <div id="level-value" class="skill-value">1</div>
+                </div>
+                
+                <div style="height: 4px;"></div>
+
+                <!-- Experience -->
+                <div id="Experience" class="skill-indicator">
+                    <div class="skill-name">Experience</div> <div id="exp-value" class="skill-value">99,123,123,123</div>
+                </div>
+                <div style="height: 4px;"></div>
+                <div class="window-inset" style="width: 98%; height: auto; display: flex;">
+                    <div id="exp-progress" class="red-progress" style="width: 66%"></div>
+                </div>
+                
+                <hr>
+                
+                <!-- Magic -->
+                <div id="Magic" class="skill-indicator">
+                    <div class="skill-name">Magic</div> <div id="magic-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillMagic.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="magic-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Fist -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Fist</div> <div id="fist-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillFist.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="fist-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Club -->
+                <div id="Club" class="skill-indicator">
+                    <div class="skill-name">Club</div> <div id="club-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillClub.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="club-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Sword -->
+                <div id="Sword" class="skill-indicator">
+                    <div class="skill-name">Sword</div> <div id="sword-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillSword.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="sword-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Axe -->
+                <div id="Axe" class="skill-indicator">
+                    <div class="skill-name">Axe</div> <div id="axe-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillAxe.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="axe-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Distance -->
+                <div id="Distance" class="skill-indicator">
+                    <div class="skill-name">Distance</div> <div id="distance-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillDistance.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="distance-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Shielding -->
+                <div id="Shielding" class="skill-indicator">
+                    <div class="skill-name">Shielding</div> <div id="shielding-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillShielding.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="shielding-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Fishing -->
+                <div id="Fishing" class="skill-indicator">
+                    <div class="skill-name">Fishing</div> <div id="fishing-value" class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillFishing.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div id="fishing-progress" class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="Player-Numeric-Status">
+                    Attack:
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Click Damage:</div> <div id="click-damage" class="skill-value">1</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Auto Damage:</div> <div id="auto-damage" class="skill-value">1</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Auto Timer:</div> <div id="auto-timer" class="skill-value">1</div>
+                    </div>
+                </div>
+
+                <div style="height: 6px;"></div>
+
+                <div class="Player-Numeric-Status">
+                    Defense:
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Resist:</div> <div id="resist" class="skill-value">0</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Reduced:</div> <div id="reduced" class="skill-value">0%</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Game Interaction Displays -->
+    <div class="middle-portion">
+
+        <div id="top-buttons">
+            <center>
+            <button class="button-toggle" style="width: 104px; height: 38px;">Adventure</button>
+            <button style="width: 104px; height: 38px;">World Map</button>
+            <button style="width: 104px; height: 38px;">Collection</button>
+            </center>
+        </div>
+
+        <div style="height: 4px;"></div>
+
+        <!-- "main screen" with the map and battles -->
+        <div id="Game Map" class="window-panel" style="width: 490px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Little_Adventurer_Doll.gif" style="height: 14px; padding-right: 4px;"></div>
+                Game Map
+            </div>
+            
+            <div class="window-body">
+                <div style="height: 4px;"></div>
+
+                <!-- big picture -->
+                <div class="window-inset" style="width: 480px; height: 352px; 
+                display: flex; justify-content: center; align-content: center; text-align: center; flex-direction: column;">
+                    
+                    <div class="game-map" style="margin-top: 2px; position: absolute;">
+                        <img src="images/maps/town_center.png">
+                    </div>
+
+                    <a style="color: var(--ui-darkgray);">Map Image not Available.</a><br>
+                    <a style="color: var(--ui-darkgray);">Report to Dev.</a><br>
+                </div>
+
+                <div style="height: 4px;"></div>
+
+                <!-- game log -->
+                <div class="window-inset" style="width: 478px; height: 43px; padding-left: 2px;">
+                    <div id="line-older" style="color: var(--ui-darkgray);">This is something that has happened a long time ago.</div>
+                    <div id="line-previous" style="color: var(--ui-gray)">This is something that has happened some time ago.</div>
+                    <div id="line-current" tyle="color: var(--ui-whitey)">This is something that has happened now!</div>
+                </div>
+
+                <div style="height: 6px;"></div>
+
+                <!-- interaction buttons-->
+                <div class="interactive-buttons">
+                    <div class="interactive-buttons-left">
+                        <button style="width: 104px; height: 38px;">Option 1</button>
+                        <button style="width: 104px; height: 38px;">Option 2</button>
+                        <button style="width: 104px; height: 38px;">Option 3</button>
+                    </div>
+                    <div class="interactive-buttons-right">
+                        <button style="width: 104px; height: 38px;">Option Right</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle Window is a separated div, moved on top of game map-->
+        <div id="battle-window" class="window-panel-battle" style="width: 164px; height: 242px; visibility: hidden;">
+            <div  class="window-title">
+                <div><img src="images/icons/other/Evilina.gif" style="height: 14px; padding-right: 4px;"></div>
+                <div id="battle-window-title">Battle Window</div>
+            </div>
+
+            <div class="window-body">                
+                <div style="height: 4px;"></div>
+
+                <!-- monster hp-->
+                <div class="window-inset" style="width: 140px; height: 16px; text-align: center; margin-bottom: 2px; margin-left: 7px;">
+                    <div id="monster-hp-bar" class="battle-hp-green" style="width: 50%;"></div>
+                    <div id="monster-hp-text" class="progress-text">50</div>
+                </div>
+
+                <!-- time for auto attack-->
+                <div class="window-inset" style="width: 140px; height: auto; display: flex; margin-bottom: 6px; margin-left: 7px;">
+                    <div id="timer-progress" class="white-progress" style="width: 100%"></div>
+                </div>
+
+                <!-- monster image-->
+                <div class="window-inset" style="width: 134px; height: 134px; margin-bottom: 6px; margin-left: 10px;">
+                    <img id="monster-image" class="monster-image" src="images/monsters/rat.gif">
+                </div>
+                
+                <!-- attack button-->
+                <button style="width: 104px; height: 38px; margin-left: 26px;" onclick="attack_monster()">Attack!</button>                
+            </div>
+        </div>
+
+        <br>
+
+        <div class="debug-buttons" style="visibility: visible;">
+            DEBUGS BUTTONS:
+            <div style="height: 3px;"></div>
+
+            <button style="width: auto; height: auto;" onclick="start_blank_game();">Initial State</button> | | - - - - - | |            
+            <button style="width: auto; height: auto;" onclick="set_player_exp(player_skill.level_exp + 100000);">+100,000 EXP</button>
+            <button style="width: auto; height: auto;" onclick="change_player_money(1000);">+1,000 gold</button>
+            <button style="width: auto; height: auto;" onclick="player_skill_level_up('sword');">Sword Lv +1</button>
+            <button style="width: auto; height: auto;" onclick="player_skill_level_up('shielding');">Shielding Lv +1</button>
+        
+            <div style="height: 6px;"></div>
+
+            <button style="width: auto; height: auto;" onclick="add_inventory_item('BACKPACK', 'backpack');">Add Backpack</button>
+            <button style="width: auto; height: auto;" onclick="debug_add_full_set();">Add Full Set</button>
+            <button style="width: auto; height: auto;" onclick="remove_inventory_item('SHIELD', 'copper_shield');">Remove Copper Shield</button>
+            <button style="width: auto; height: auto;" onclick="open_battle_window('Demon');">Battle Demon</button>
+            <button style="width: auto; height: auto;" onclick="open_battle_window('Cave_Rat');">Battle Cave Rat</button>
+        </div>
+
+    </div>
+    
+
+    <!-- Player Personal Stuff Displays -->
+    <div class="right-portion">
+        <!-- Player Equipment -->
+        <div id="Equipment" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Magic_Hat.gif" style="height: 14px; padding-right: 4px;"></div>
+                Equipment
+            </div>
+
+            <div style="height: 4px;"></div>
+            
+            <div class="window-body">
+                <div class="player-equipment">
+                    <div class="equipment-sides">
+                        <div class="item_slot" onclick="deEquip_item('amulet');"><img id="equip_amulet" src="images/ui/NoAmulet.png" title="Amulet"></div>
+                        <div class="item_slot" onclick="deEquip_item('weapon');"><img id="equip_weapon" src="images/ui/NoWeapon.png" title="Weapon"></div>
+                        <div class="item_slot" onclick="deEquip_item('ring');"><img id="equip_ring" src="images/ui/NoRing.png" title="Ring"></div>
+                    </div>
+                    <div class="equipment-center">
+                        <div class="item_slot" onclick="deEquip_item('helmet');"><img id="equip_helmet" src="images/ui/NoHelmet.png" title="Helmet"></div>
+                        <div class="item_slot" onclick="deEquip_item('armor');"><img id="equip_armor" src="images/ui/NoArmor.png" title="Armor"></div>
+                        <div class="item_slot" onclick="deEquip_item('legs');"><img id="equip_legs" src="images/ui/NoLegs.png" title="Legs"></div>
+                        <div class="item_slot" onclick="deEquip_item('boots');"><img id="equip_boots" src="images/ui/NoBoots.png" title="Boots"></div>
+                    </div>
+                    <div class="equipment-sides">
+                        <div class="item_slot" onclick="deEquip_item('backpack');"><img id="equip_backpack" src="images/ui/NoBackpack.png" title="Backpack"></div>
+                        <div class="item_slot" onclick="deEquip_item('shield');"><img id="equip_shield" src="images/ui/NoShield.png" title="Shield"></div>
+                        <div class="item_slot" onclick="deEquip_item('ammo');"><img id="equip_ammo" src="images/ui/NoAmmo.png" title="Off-hand"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 8px;"></div>
+
+        <!-- Player Inventory -->
+        <div id="Inventory" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Expedition_Backpack.gif" style="height: 14px; padding-right: 4px;"></div>
+                Inventory
+            </div>
+
+            <div style="height: 4px;"></div>
+
+            <!-- Player Money -->
+            <div class="window-inset" style="width: 94%; height: 16px; margin-left: 4px;">
+                <div class="player-money">
+                    <div id= "crystal-display" class="money-crystal" style="margin-right: 12px;">                        
+                        <div id="money-crystal" style="display: inline">999,999</div>
+                        <img src="images/ui/coin_crystal.png">
+                    </div>
+                    <div id= "platinum-display" class="money-platinum" style="margin-right: 12px;">                        
+                        <div id="money-platinum" style="display: inline">99</div>
+                        <img src="images/ui/coin_platinum.png">
+                    </div>
+                    <div class="money-gold" style="margin-right: 4px;">                        
+                        <div id="money-gold" style="display: inline">99</div>
+                        <img src="images/ui/coin_gold.png">
+                    </div>
+                </div>
+            </div>
+
+            <div style="height: 4px;"></div>
+            
+            <!-- Player Backpack -->
+            <div class="window-body">
+                <div class="player-backpack">
+                    <div id="row1" class="backpack-row">
+                        <div class="item_slot" onclick="use_item_from_inventory(1);"><img id="bag_sprite1" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(2);"><img id="bag_sprite2" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(3);"><img id="bag_sprite3" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(4);"><img id="bag_sprite4" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+
+                    <div id="row2" class="backpack-row">
+                        <div class="item_slot" onclick="use_item_from_inventory(5);"><img id="bag_sprite5" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(6);"><img id="bag_sprite6" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(7);"><img id="bag_sprite7" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(8);"><img id="bag_sprite8" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+
+                    <div id="row3" class="backpack-row">
+                        <div class="item_slot" onclick="use_item_from_inventory(9);"><img id="bag_sprite9" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(10);"><img id="bag_sprite10" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(11);"><img id="bag_sprite11" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(12);"><img id="bag_sprite12" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+
+                    <div id="row4" class="backpack-row">
+                        <div class="item_slot" onclick="use_item_from_inventory(13);"><img id="bag_sprite13" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(14);"><img id="bag_sprite14" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(15);"><img id="bag_sprite15" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(16);"><img id="bag_sprite16" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+
+                    <div id="row5" class="backpack-row">
+                        <div class="item_slot" onclick="use_item_from_inventory(17);"><img id="bag_sprite17" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(18);"><img id="bag_sprite18" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(19);"><img id="bag_sprite19" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                        <div class="item_slot" onclick="use_item_from_inventory(20);"><img id="bag_sprite20" src="images/icons/other/Tibiapedia.gif" title=""></div>
+                    </div>
+                                       
+                </div>
+            </div>
+    
+        </div>
+        
+        <div style="height: 8px;"></div>
+
+        <!-- Map Tasks -->
+        <div id="Map Tasks" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Draken_Doll.gif" style="height: 14px; padding-right: 4px;"></div>
+                Map Tasks
+            </div>
+    
+            <div class="window-body">
+                Task 1: Whatever I want
+                <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                    <div class="yellow-progress" style="width: 50%"></div>
+                    <div class="progress-text">50%</div>
+                </div>
+    
+                <div style="height: 4px;"></div>
+    
+                Task 2: Some Other Thing
+                <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                    <div class="yellow-progress" style="width: 50%"></div>
+                    <div class="progress-text">666</div>
+                </div>
+
+            </div>
+
+    </div>
+
+</div> <!-- main canvas ended -->
+
+</body>
+
+</html>

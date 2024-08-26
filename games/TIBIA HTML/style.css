@@ -1,0 +1,289 @@
+:root {
+    --ui-white: #c0c0c0;
+    --ui-gray: #808080;
+    --ui-darkgray: #595959;
+    --ui-black: #252525;
+
+    --item-rarity-green: rgb(33,135,34);
+    --item-rarity-blue: rgb(43, 133, 166);
+    --item-rarity-purple: rgb(108, 66, 123);
+    --item-rarity-gold: rgb(135, 128, 24);
+}
+
+/* The font basis for the whole page. Change it locally when needed */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--ui-white);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+body {
+    background-image: url("images/textures/textura_light.png");
+    margin: 0px;
+}
+
+hr {
+    width: 90%;
+    border-top: 1px solid var(--ui-black);
+    border-bottom: 1px solid var(--ui-gray);
+}
+
+/*********************************************************************/
+/* Button Styling */
+button {
+    background-image: url("images/textures/textura_light.png");
+
+    border: 2px solid var(--ui-gray);
+    border-bottom: 2px solid var(--ui-black);
+    border-right: 2px solid var(--ui-black);
+
+    padding: 4px;
+}
+button:hover {
+    background-image: url("images/textures/textura_lighter.png");
+}
+button:active{
+    background-image: url("images/textures/textura_mid.png");
+
+    border: 2px solid var(--ui-black);
+    border-bottom: 2px solid var(--ui-darkgray);
+    border-right: 2px solid var(--ui-darkgray);
+
+    color: var(--ui-gray);
+}
+button:disabled{
+    background-image: url("images/textures/textura_dark.png");
+
+    border: 2px solid var(--ui-darkgray);
+    border-bottom: 2px solid rgba(0,0,0, 0.3);
+    border-right: 2px solid rgba(0,0,0, 0.3);
+
+    color: var(--ui-darkgray);
+}
+
+.button-toggle{
+    background-image: url("images/textures/textura_mid.png");
+
+    border: 2px solid var(--ui-black);
+    border-bottom: 2px solid var(--ui-darkgray);
+    border-right: 2px solid var(--ui-darkgray);
+
+    color: var(--ui-gray);
+
+    /*prevent hovering a toggled button*/
+    pointer-events: none;
+}
+
+
+/*********************************************************************/
+/* Window Styling */
+.window-panel {
+    border: 2px solid var(--ui-gray);
+    border-bottom: 2px solid var(--ui-black);
+    border-right: 2px solid var(--ui-black);
+
+    background-image: url("images/textures/textura_light.png");
+}
+.window-title {
+    background-image: url("images/textures/textura_mid.png");
+    color: var(--ui-gray);
+    border-bottom: 1px solid var(--ui-black);
+
+    padding-top: 2px;
+    padding-left: 4px;
+    text-align: start;
+    display: flex;
+}
+.window-body {
+    padding: 4px;
+    padding-top: 1px;
+
+    text-align: start;
+}
+
+/* Inset kind of window, like a cut out */
+.window-inset, .item_slot{
+    border: 1px solid rgba(0,0,0, 0.7);
+    border-bottom: 1px solid var(--ui-gray);
+    border-right: 1px solid var(--ui-gray);
+
+    background-image: url("images/textures/textura_dark.png");
+    text-align: start;
+
+    line-height: 110%;
+}
+
+/*********************************************************************/
+/* Progress Bars Styling */
+.red-progress {
+    height: 3px;
+    background: rgb(242, 0, 0);
+    border-bottom: 1px solid rgba(0,0,0, 0.7);
+}
+.green-progress {
+    height: 3px;
+    background: rgb(0, 242, 0);
+    border-bottom: 1px solid rgba(0,0,0, 0.7);
+}
+.yellow-progress {
+    height: 16px;
+    background-image: linear-gradient(rgb(199, 141, 15), rgb(82, 56, 0));
+}
+.progress-text {
+    position: relative;
+    top: -17px;
+
+    color: white;
+    text-shadow: 1px 1px 0px var(--ui-black);
+}
+
+/*********************************************************************/
+/* HP/MP Bars Styling */
+.hpmp-parent {
+    text-align: center;
+    display: flex;
+}
+
+.hpmp-indicator {
+    position: relative;
+    top: -17px;
+
+    color: white;
+    text-shadow: 1px 1px 0px var(--ui-black);
+}
+
+.player-bar-base{
+    height: 14px;
+    background-image: linear-gradient(rgb(40, 73, 142), rgb(103, 104, 103));
+
+    border: 1px solid rgba(40, 48, 71, 0.7);
+    border-radius: 8px;
+}
+.HP-bar {
+    height: 13px;
+    background-image: linear-gradient(rgb(239, 139, 141), rgb(155, 60, 65));
+
+    border: 1px solid rgba(74, 43, 56, 0.7);
+    border-radius: 8px;
+}
+.MP-bar {
+    height: 13px;
+    background-image: linear-gradient(rgb(110, 107, 213), rgb(56, 54, 155));
+
+    border: 1px solid rgba(74, 43, 56, 0.7);
+    border-radius: 8px;
+}
+
+/*********************************************************************/
+/* Skill Window Styling */
+.skill-indicator{
+    display: flex;
+    justify-content: space-between;
+}
+.skill-icon {
+    float: left;
+    margin-right: 4px;
+}
+.skill-with-icon{
+    display: flex;
+}
+
+.Player-Numeric-Specifics{
+    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*********************************************************************/
+/* Page Design Styling */
+.main-canvas{
+    padding: 32px;
+    justify-content: center;
+    display: flex;   
+}
+.middle-portion {
+    margin: 8px;
+}
+
+.interactive-buttons{
+    margin: 1px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/*********************************************************************/
+/* Player Equipment Styling */
+.player-equipment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.equipment-center{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.backpack-row{
+    display: flex;
+}
+.player-money{
+    display: flex;
+    justify-content: end;
+}
+
+.item_slot{
+    min-width: 32px;
+    max-width: 32px;
+
+    min-height: 32px;
+    max-height: 32px;
+
+    margin-right: 2px;
+}
+
+/***********************************************************************/
+/* Battle Window */
+.battle-hp-green {
+    height: 16px;
+    background-image: linear-gradient(rgb(34, 118, 0), rgb(23, 79, 0));
+}
+.battle-hp-yellow {
+    height: 16px;
+    background-image: linear-gradient(rgb(118, 100, 0), rgb(79, 74, 0));
+}
+.battle-hp-red {
+    height: 16px;
+    background-image: linear-gradient(rgb(118, 0, 0), rgb(79, 0, 0));
+}
+.monster-image {
+    height: 128px;
+    width: 128px;
+    image-rendering: pixelated;
+
+    -webkit-filter: drop-shadow(1px 1px 0 var(--ui-gray))
+                    drop-shadow(-1px 1px 0 var(--ui-gray))
+                    drop-shadow(1px -1px 0 var(--ui-gray))
+                    drop-shadow(-1px -1px 0 var(--ui-gray));
+    filter: drop-shadow(1px 1px 0 var(--ui-gray))
+            drop-shadow(-1px 1px 0 var(--ui-gray))
+            drop-shadow(1px -1px 0 var(--ui-gray))
+            drop-shadow(-1px -1px 0 var(--ui-gray));
+}
+.white-progress {
+    height: 3px;
+    background: whitesmoke;
+    border-bottom: 1px solid rgba(0,0,0, 0.7);
+}
+
+.window-panel-battle {
+    border: 2px solid var(--ui-gray);
+    border-bottom: 2px solid var(--ui-black);
+    border-right: 2px solid var(--ui-black);
+
+    background-image: url("images/textures/textura_light.png");
+
+    position: absolute;
+    margin-left: 163px;
+    margin-top: -402px;
+}

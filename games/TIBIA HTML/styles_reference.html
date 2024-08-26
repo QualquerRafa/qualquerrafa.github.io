@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Idle Game</title>
+    <meta name="description" content="Tibia reimagined as an Idle Game">
+    <meta name="keywords" content="tibia idle game auto clicker incremental">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+
+    Testando a fonte do site<br>
+    <a style="color: var(--ui-gray)">Testando outra cor</a><br>
+    <a style="color: var(--ui-darkgray)">Testando outra cor</a><br>
+    <a style="color: var(--ui-black)">Testando outra cor</a>
+
+    <br><br>
+
+    <button>this is a button</button> <button disabled>this is a button</button> <button class="button-toggle">this is a button</button>
+    
+    <br><br>
+    
+    <div class="window-panel" style="width: 260px; height: auto;">
+        <div class="window-title">
+            <div><img src="images/icons/other/Skull_Candle.gif" style="height: 14px; padding-right: 4px;"></div>
+            Titulo da Janela
+        </div>
+
+        <div class="window-body">
+            Corpo da janela. E se eu continuar escrevendo eternamente?
+            <br>
+            Com line Break e Tudo e tal
+        </div>
+    </div>
+
+    <br>
+
+    <div class="window-inset" style="width: 240px; height: auto; padding: 2px;">
+        <a style="color: var(--ui-darkgray)">Algo bem antigo . . .</a><br>
+        <a style="color: var(--ui-gray)">Algo que aconteceu antes...</a><br>
+        <a style="color: var(--ui-whitey)">Algo que acabou de acontecer!</a><br>
+    </div>
+
+    <br>
+
+    <div class="window-inset" style="width: 240px; height: auto; display: flex;">
+        <div class="red-progress" style="width: 66%"></div>
+    </div>
+
+    <br>
+
+    <div class="window-inset" style="width: 240px; height: auto; display: flex;">
+        <div class="green-progress" style="width: 50%"></div>
+    </div>
+
+    <br>
+
+    <div id="Player HP/MP" class="window-panel" style="width: 150px; height: auto;">
+        <div class="window-title">
+            <div><img src="images/icons/other/Skull_Candle.gif" style="height: 14px; padding-right: 4px;"></div>
+            Health / Mana
+        </div>
+        
+        <div class="window-body">
+            <div style="height: 4px;"></div>
+            <div class="hpmp-parent">
+                <div class="little-icon"><img src="images/ui/hp.png"></div>
+                <div class="player-bar-base" style="width: 100%">
+                    <div class="HP-bar" style="width: 50%;"></div>
+                    <div class="hpmp-indicator">150/300</div>
+                </div>
+            </div>
+
+            <div style="height: 4px;"></div>
+
+            <div class="hpmp-parent">
+                <div class="little-icon"><img src="images/ui/mp.png"></div>
+                <div class="player-bar-base" style="width: 100%">
+                    <div class="MP-bar" style="width: 75%;"></div>
+                    <div class="hpmp-indicator">75/100</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="Player Tasks" class="window-panel" style="width: 200px; height: auto;">
+        <div class="window-title">
+            <div><img src="images/icons/other/Skull_Candle.gif" style="height: 14px; padding-right: 4px;"></div>
+            Player Tasks
+        </div>
+
+        <div class="window-body">
+            Task 1: Whatever I want
+            <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                <div class="yellow-progress" style="width: 50%"></div>
+                <div class="progress-text">50%</div>
+            </div>
+
+            <div style="height: 5px;"></div>
+
+            Task 2: Some Other Thing
+            <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                <div class="yellow-progress" style="width: 50%"></div>
+                <div class="progress-text">666</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

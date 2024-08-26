@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Idle Game</title>
+    <meta name="description" content="Tibia reimagined as an Idle Game">
+    <meta name="keywords" content="tibia idle game auto clicker incremental">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+<div class="main-canvas">
+
+    <!-- Fixed Player Status Displays -->
+    <div class="left-portion">
+        <!-- Health/Mana Window  -->
+        <div id="Player HP/MP" class="window-panel" style="width: 160px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Skull_Candle.gif" style="height: 14px; padding-right: 4px;"></div>
+                Health / Mana
+            </div>
+            
+            <div class="window-body">
+                <div style="height: 4px;"></div>
+                <div class="hpmp-parent">
+                    <div class="little-icon"><img src="images/ui/hp.png"></div>
+                    <div class="player-bar-base" style="width: 100%">
+                        <div class="HP-bar" style="width: 50%;"></div>
+                        <div class="hpmp-indicator">150/300</div>
+                    </div>
+                </div>
+    
+                <div style="height: 4px;"></div>
+    
+                <div class="hpmp-parent">
+                    <div class="little-icon"><img src="images/ui/mp.png"></div>
+                    <div class="player-bar-base" style="width: 100%">
+                        <div class="MP-bar" style="width: 75%;"></div>
+                        <div class="hpmp-indicator">75/100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 8px;"></div>
+
+        <!-- Player Skills Window -->
+        <div id="Player Skills" class="window-panel" style="width: 160px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Chaos_Critical_Dice.gif" style="height: 14px; padding-right: 4px;"></div>
+                Player Skills
+            </div>
+
+            <div class="window-body" style="padding-left: 5px; padding-right: 5px;">
+                <!-- Level -->
+                <div id="Level" class="skill-indicator">
+                    <div class="skill-name">Level</div> <div class="skill-value">1</div>
+                </div>
+                
+                <div style="height: 4px;"></div>
+
+                <!-- Experience -->
+                <div id="Experience" class="skill-indicator">
+                    <div class="skill-name">Experience</div> <div class="skill-value">99,123,123,123</div>
+                </div>
+                <div style="height: 4px;"></div>
+                <div class="window-inset" style="width: 98%; height: auto; display: flex;">
+                    <div class="red-progress" style="width: 66%"></div>
+                </div>
+                
+                <hr>
+                
+                <!-- Magic -->
+                <div id="Magic" class="skill-indicator">
+                    <div class="skill-name">Magic</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillMagic.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Fist -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Fist</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillFist.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Club -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Club</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillClub.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Sword -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Sword</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillSword.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Axe -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Axe</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillAxe.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Distance -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Distance</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillDistance.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Shielding -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Shielding</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillShielding.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <!-- Fishing -->
+                <div id="Fist" class="skill-indicator">
+                    <div class="skill-name">Fishing</div> <div class="skill-value">1</div>
+                </div>
+                <div class="skill-with-icon">
+                    <div class="skill-icon"><img src="images/ui/skillFishing.png"></div>
+                    <div class="window-inset" style="width: 98%; height: 4px; display: flex; margin-top: 5px;">
+                        <div class="green-progress" style="width: 66%"></div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="Player-Numeric-Status">
+                    Attack:
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Click Damage:</div> <div class="skill-value">1</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Auto Damage:</div> <div class="skill-value">1</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Auto Timer:</div> <div class="skill-value">1</div>
+                    </div>
+                </div>
+
+                <div style="height: 6px;"></div>
+
+                <div class="Player-Numeric-Status">
+                    Defense:
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Reduced:</div> <div class="skill-value">1%</div>
+                    </div>
+                    <div class="Player-Numeric-Specifics">
+                        <div class="skill-name">Resist:</div> <div class="skill-value">1</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Game Interaction Displays -->
+    <div class="middle-portion">
+
+        <div id="top-buttons">
+            <center>
+            <button class="button-toggle" style="width: 104px; height: 38px;">Adventure</button>
+            <button style="width: 104px; height: 38px;">World Map</button>
+            <button style="width: 104px; height: 38px;">Collection</button>
+            </center>
+        </div>
+
+        <div style="height: 4px;"></div>
+
+        <!-- "main screen" with the map and battles -->
+        <div id="Game Map" class="window-panel" style="width: 490px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Little_Adventurer_Doll.gif" style="height: 14px; padding-right: 4px;"></div>
+                Game Map
+            </div>
+            
+            <div class="window-body">
+                <div style="height: 4px;"></div>
+
+                <!-- big picture -->
+                <div class="window-inset" style="width: 480px; height: 352px; 
+                display: flex; justify-content: center; align-content: center; text-align: center; flex-direction: column;">
+                    
+                    <div class="game-map" style="margin-top: 2px; position: absolute;">
+                        <img src="images/maps/town_center.png">
+                    </div>
+
+                    <a style="color: var(--ui-darkgray);">Map Image not Available.</a><br>
+                    <a style="color: var(--ui-darkgray);">Report to Dev.</a><br>
+                </div>
+
+                <div style="height: 4px;"></div>
+
+                <!-- game log -->
+                <div class="window-inset" style="width: 478px; height: 43px; padding-left: 2px;">
+                    <div id="line-older"><a style="color: var(--ui-darkgray);">This is something that has happened a long time ago.</a></div>
+                    <div id="line-previous"><a style="color: var(--ui-gray)">This is something that has happened some time ago.</a></div>
+                    <div id="line-current"> <a style="color: var(--ui-whitey)">This is something that has happened now!</a></div>
+                </div>
+
+                <div style="height: 6px;"></div>
+
+                <!-- interaction buttons-->
+                <div class="interactive-buttons">
+                    <div class="interactive-buttons-left">
+                        <button style="width: 104px; height: 38px;">Option 1</button>
+                        <button style="width: 104px; height: 38px;">Option 2</button>
+                        <button style="width: 104px; height: 38px;">Option 3</button>
+                    </div>
+                    <div class="interactive-buttons-right">
+                        <button style="width: 104px; height: 38px;">Option Right</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Player Personal Stuff Displays -->
+    <div class="right-portion">
+        <!-- Player Equipment -->
+        <div id="Equipment" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Magic_Hat.gif" style="height: 14px; padding-right: 4px;"></div>
+                Equipment
+            </div>
+
+            <div style="height: 4px;"></div>
+            
+            <div class="window-body">
+                <div class="player-equipment">
+                    <div class="equipment-sides">
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoAmulet.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoWeapon.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px;"><img src="images/ui/NoRing.png"></div>
+                    </div>
+                    <div class="equipment-center">
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoHelmet.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoArmor.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoLegs.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px;"><img src="images/ui/NoBoots.png"></div>
+                    </div>
+                    <div class="equipment-sides">
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoBag.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px; margin-bottom: 4px;"><img src="images/ui/NoShield.png"></div>
+                        <div class="window-inset" style="width: 32px; height: 32px;"><img src="images/ui/NoAmmo.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 8px;"></div>
+
+        <!-- Player Inventory -->
+        <div id="Inventory" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Expedition_Backpack.gif" style="height: 14px; padding-right: 4px;"></div>
+                Inventory
+            </div>
+
+            <div style="height: 4px;"></div>
+
+            <!-- Player Money -->
+            <div class="window-inset" style="width: 94%; height: 16px; margin-left: 4px;">
+                <div class="player-money">
+                    <div class="money-crystal" style="margin-right: 12px;">                        
+                        999,999
+                        <img src="images/ui/coin_crystal.png">
+                    </div>
+                    <div class="money-platinum" style="margin-right: 12px;">                        
+                        99
+                        <img src="images/ui/coin_platinum.png">
+                    </div>
+                    <div class="money-gold" style="margin-right: 4px;">                        
+                        99
+                        <img src="images/ui/coin_gold.png">
+                    </div>
+                </div>
+            </div>
+
+            <div style="height: 4px;"></div>
+            
+            <!-- Player Backpack -->
+            <div class="window-body">
+                <div class="player-backpack">
+                    <div class="backpack-row">
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px;"></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+                    <div class="backpack-row">
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px;"></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+                    <div class="backpack-row">
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px;"></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+                    <div class="backpack-row">
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px;"></div>
+                    </div>
+                    <div style="height: 2px;"></div>
+                    <div class="backpack-row">
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px; margin-right: 2px;"></div>
+                        <div class="window-inset" style="min-width: 32px; min-height: 32px;"></div>
+                    </div>                    
+                </div>
+            </div>
+    
+        </div>
+        
+        <div style="height: 8px;"></div>
+
+        <!-- Map Tasks -->
+        <div id="Map Tasks" class="window-panel" style="width: 150px; height: auto;">
+            <div class="window-title">
+                <div><img src="images/icons/other/Draken_Doll.gif" style="height: 14px; padding-right: 4px;"></div>
+                Map Tasks
+            </div>
+    
+            <div class="window-body">
+                Task 1: Whatever I want
+                <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                    <div class="yellow-progress" style="width: 50%"></div>
+                    <div class="progress-text">50%</div>
+                </div>
+    
+                <div style="height: 4px;"></div>
+    
+                Task 2: Some Other Thing
+                <div class="window-inset" style="width: 99%; height: 16px; text-align: center;">
+                    <div class="yellow-progress" style="width: 50%"></div>
+                    <div class="progress-text">666</div>
+                </div>
+
+            </div>
+
+    </div>
+
+</div> <!-- main canvas ended -->
+
+</body>
+
+</html>
