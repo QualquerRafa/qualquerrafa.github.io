@@ -9,7 +9,7 @@ projects = {
     },
 
     "project_mythomania" : {
-        "url" : "games/mythomania/mythomania.html",
+        "url" : "mythomania.html",
         "img" : "mythomania",
         "title" : "Mythomania Card Viewer",
         "status" : "Incompleto",
@@ -30,7 +30,7 @@ projects = {
         "url": "https://qualquerrafa.github.io/lista-dmo/",
         "img" : "dmo-list",
         "title" : "DMO - Checklist Diária",
-        "status" : "Abandonado",
+        "status" : "Incompleto",
         "description" : "Projeto de 2022 sobre uma lista de atividades diárias a se cumprir no MMORPG Digimon Masters Online. Abandonado por não jogar mais.",
         "tags" : ["Javascript", "Checklist", "DMO", "Digimon"]
     },
@@ -45,7 +45,7 @@ projects = {
     },
 
     "project_digigotchi" : {
-        "url" : "games/digigotchi/digigotchi.html",
+        "url" : "digigotchi.html",
         "img" : "digi-gotchi",
         "title" : "DigiGotchi",
         "status" : "Completo",
