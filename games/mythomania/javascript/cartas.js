@@ -36,7 +36,7 @@ mythomania_cards = {
         "fogo": 27
       },
    7: {
-        "nome": "horus",
+        "nome": "hórus",
         "magia": 19,
         "força": 9,
         "fogo": 23
@@ -48,7 +48,7 @@ mythomania_cards = {
         "fogo": 24
       },
    9: {
-        "nome": "hercules",
+        "nome": "hércules",
         "magia": 10,
         "força": 27,
         "fogo": 19
@@ -189,10 +189,16 @@ function update_card(card_id){
   var card_força = mythomania_cards[card_id].força
   var card_fogo = mythomania_cards[card_id].fogo
 
-  document.getElementById("card-id").innerHTML = String(card_id)
+  document.getElementById("card-id").innerHTML = card_id.toString()
   document.getElementById("card-nome").innerHTML = card_name
 
-  document.getElementById("card-art").src = "_resources/artes/" + card_name + ".png"
+  if (card_name.length >= 15){
+    document.getElementById("card-nome").style.fontSize = "28px"
+  } else {
+    document.getElementById("card-nome").style.fontSize = "32px"
+  }
+
+  document.getElementById("card-art").src = "games/mythomania/_resources/artes/" + card_name + ".png"
 
   document.getElementById("poder-magia").innerHTML = card_magia
   document.getElementById("poder-forca").innerHTML = card_força
