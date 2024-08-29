@@ -13,7 +13,7 @@ projects = {
         "img" : "mythomania",
         "title" : "Mythomania Card Viewer",
         "status" : "Completo",
-        "description" : "Design das cartas do jogo Mythomania (Elma Chips, 2008) recriado inteiro em Javascript e CSS. Artes das cartas disponíveis só até Anubis (5).",
+        "description" : "Design das cartas do jogo Mythomania (Elma Chips, 2008) recriado inteiro em Javascript e CSS. Joguinho simples estilo Super Trunfo.",
         "tags" : ["Javascript", "Cardgame", "Mythomania", ""]
     },
 
