@@ -9,7 +9,7 @@ projects = {
     },
 
     "project_mythomania" : {
-        "url" : "mythomania.html",
+        "url" : "https://qualquerrafa.github.io/mythomania",
         "img" : "mythomania",
         "title" : "Mythomania Card Viewer",
         "status" : "Incompleto",
