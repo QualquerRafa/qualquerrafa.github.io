@@ -11,7 +11,7 @@ projects = {
     "project_mythomania" : {
         "url" : "https://qualquerrafa.github.io/mythomania",
         "img" : "mythomania",
-        "title" : "Mythomania Card Viewer",
+        "title" : "Mythomania Digital",
         "status" : "Completo",
         "description" : "Design das cartas do jogo Mythomania (Elma Chips, 2008) recriado inteiro em Javascript e CSS. Joguinho simples estilo Super Trunfo.",
         "tags" : ["Javascript", "Cardgame", "Mythomania", ""]
