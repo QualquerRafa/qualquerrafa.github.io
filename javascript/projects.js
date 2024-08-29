@@ -12,7 +12,7 @@ projects = {
         "url" : "https://qualquerrafa.github.io/mythomania",
         "img" : "mythomania",
         "title" : "Mythomania Card Viewer",
-        "status" : "Incompleto",
+        "status" : "Completo",
         "description" : "Design das cartas do jogo Mythomania (Elma Chips, 2008) recriado inteiro em Javascript e CSS. Artes das cartas disponíveis só até Anubis (5).",
         "tags" : ["Javascript", "Cardgame", "Mythomania", ""]
     },
