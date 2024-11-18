@@ -4,7 +4,7 @@ projects = {
         "img" : "sutoku",
         "title" : "suTOKU",
         "status" : "Completo",
-        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku!",
+        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku! (Projeto ainda sendo Portado pra Web)",
         "tags" : ["Godot", "Puzzle", "Tokusatsu", ""]
     },
     "project_dracomania" : {
