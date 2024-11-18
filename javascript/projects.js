@@ -1,4 +1,12 @@
 projects = {
+    "project_sutoku" : {
+        "url" : "https://qualquerrafa.github.io/sutoku",
+        "img" : "sutoku",
+        "title" : "suTOKU",
+        "status" : "Completo",
+        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku!",
+        "tags" : ["Godot", "Puzzle", "Tokusatsu", ""]
+    },
     "project_dracomania" : {
         "url" : "https://qualquerrafa.github.io/dracomania",
         "img" : "dracomania",
