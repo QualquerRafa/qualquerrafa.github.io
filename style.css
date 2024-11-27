@@ -84,3 +84,30 @@ a {
     color: whitesmoke;
     background-color: rgb(128, 124, 124);
 }
+
+/***************************************************************/
+/* Top Bar with my links */
+.top-bar {
+    background-color: rgb(128, 124, 124);
+    height: 64px;
+    margin-bottom: 12px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    height: 48px;
+    min-width: 142px;
+    
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 15px;
+}
+
+button > img,
+button > span {
+  vertical-align: bottom;
+}

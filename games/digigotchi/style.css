@@ -1,4 +1,16 @@
 body {
     background-color: rgb(30, 124, 211);
-    margin: 0px;
+    margin-top: 10%;
+}
+
+iframe {
+    border-radius: 4px;
+    position: relative;
+}
+
+.iframe-styling {
+    height: 469px;
+    overflow: hidden;
+    
+    border-radius: 12px;
 }
