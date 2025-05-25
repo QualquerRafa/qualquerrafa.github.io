@@ -80,7 +80,7 @@ function create_card(project_loaded_data){
                 document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#edc511";
                 break;
             case "Lista":
-                document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#66ff66";
+                document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#009933";
                 break;
             default: break;
         }
