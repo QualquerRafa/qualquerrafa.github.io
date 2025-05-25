@@ -2,10 +2,10 @@ projects = {
     "project_build" : {
         "url" : "https://qualquerrafa.github.io/build",
         "img" : "build",
-        "title" : "Ciência em KR Build",
+        "title" : "Ciência em Kamen Rider Build",
         "status" : "Completo",
         "description" : "Lista completa com as referências e explicações Físicas/Matemáticas pros Títulos de episódios em Kamen Rider Build.",
-        "tags" : ["Ciência", "Lista", "Tokusatsu", ""]
+        "tags" : ["Lista", "Ciência", "Tokusatsu", ""]
     },
     "project_sutoku" : {
         "url" : "https://qualquerrafa.github.io/sutoku",
