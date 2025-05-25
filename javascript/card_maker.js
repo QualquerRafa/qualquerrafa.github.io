@@ -79,6 +79,9 @@ function create_card(project_loaded_data){
             case "Javascript":
                 document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#edc511";
                 break;
+            case "Lista":
+                document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#66ff66";
+                break;
             default: break;
         }
 
