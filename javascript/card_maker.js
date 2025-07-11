@@ -2,7 +2,12 @@ function populate_cards(){
     for (let i=0; i < Object.keys(projects).length; i++){
         let proj_id = Object.keys(projects)[i]
         let proj_data = projects[proj_id]
-        console.log(proj_data)
+        //console.log(proj_data)
+
+        //Skip the ones that have the Hide key
+        if (proj_data.hide == true) {
+            continue;
+        }
 
         create_card(proj_data)
     }
@@ -15,7 +20,7 @@ function create_card(project_loaded_data){
         <div class="project-image">
             <img id="proj-img_${project_indentifier}" src="images/permitted-memories.png" style="width: 100%;">
         </div>
-
+        <hr>
         <div class="project-identifier">
             <div id="proj-title_${project_indentifier}" class="project-title">Titulo de Projeto</div>
             <div id="proj-status_${project_indentifier}" class="project-status">Status</div>
@@ -55,6 +60,7 @@ function create_card(project_loaded_data){
     document.getElementById("proj-url_" + project_indentifier).href = card_url
     
     document.getElementById("proj-status_" + project_indentifier).innerHTML = card_status
+    document.getElementById("proj-status_" + project_indentifier).style.display = 'none'
     let color = ""
     switch (card_status){
         case "Abandonado": color = "red"; break;

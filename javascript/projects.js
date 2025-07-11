@@ -61,6 +61,7 @@ projects = {
     },
 
     "project_dmolist" : {
+        "hide": true,
         "url": "https://qualquerrafa.github.io/lista-dmo/",
         "img" : "dmo-list",
         "title" : "DMO - Checklist Diária",
@@ -70,6 +71,7 @@ projects = {
     },
 
     "project_tibia" : {
+        "hide" : false,
         "url" : "games/TIBIA HTML/tibia.html",
         "img" : "tibia",
         "title" : "Tibia Clicker Game",
