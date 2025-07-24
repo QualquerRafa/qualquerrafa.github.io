@@ -1,4 +1,12 @@
 projects = {
+     "project_bones" : {
+        "url" : "https://qualquerrafa.github.io/bones-clicker/",
+        "img" : "bones",
+        "title" : "Bones Clicker Game",
+        "status" : "Completo",
+        "description" : "Minha reinterpretação do MMORPG Tibia (1997) como um jogo Idle/Clicker. Conteúdo do jogo inspirado apenas em Rookgaard (por enquanto?)",
+        "tags" : ["Godot", "Idle", "Clicker", "Tibia"]
+    },
     "project_build" : {
         "url" : "https://qualquerrafa.github.io/build",
         "img" : "build",
@@ -12,7 +20,7 @@ projects = {
         "img" : "sutoku",
         "title" : "suTOKU",
         "status" : "Completo",
-        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku! (Projeto ainda sendo Portado pra Web)",
+        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku! Projeto em vias de ser encerrado.",
         "tags" : ["Godot", "Puzzle", "Tokusatsu", ""]
     },
     "project_dracomania" : {
@@ -71,7 +79,7 @@ projects = {
     },
 
     "project_tibia" : {
-        "hide" : false,
+        "hide" : true,
         "url" : "games/TIBIA HTML/tibia.html",
         "img" : "tibia",
         "title" : "Tibia Clicker Game",
