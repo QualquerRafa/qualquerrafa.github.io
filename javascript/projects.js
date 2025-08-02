@@ -7,6 +7,14 @@ projects = {
         "description" : "Minha reinterpretação do MMORPG Tibia (1997) como um jogo Idle/Clicker. Conteúdo do jogo inspirado apenas em Rookgaard (por enquanto?)",
         "tags" : ["Godot", "Idle", "Clicker", "Tibia"]
     },
+    "project_toku-anything" : {
+        "url" : "https://bsky.app/profile/tokuanything.bsky.social",
+        "img" : "toku_anything",
+        "title" : "Tokusatsu Anything BOT",
+        "status" : "Completo",
+        "description" : "Um BOT para a rede social Bluesky que faz posts 100% aleatórios misturando personagens, locais e produtos de Tokusatsu. Primeiro projeto do tipo.",
+        "tags" : ["Python", "Bot", "Tokusatsu", ""]
+     },
     "project_build" : {
         "url" : "https://qualquerrafa.github.io/build",
         "img" : "build",

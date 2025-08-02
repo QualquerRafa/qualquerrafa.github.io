@@ -85,6 +85,9 @@ function create_card(project_loaded_data){
             case "Javascript":
                 document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#edc511";
                 break;
+            case "Python":
+                document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#4b8bbeff";
+                break;
             case "Lista":
                 document.getElementById("tag"+ (i+1).toString() +"_" + project_indentifier).style.backgroundColor = "#009933";
                 break;
