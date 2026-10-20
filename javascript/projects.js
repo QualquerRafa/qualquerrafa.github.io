@@ -4,7 +4,7 @@ projects = {
         "img" : "bones",
         "title" : "Bones Clicker Game",
         "status" : "Completo",
-        "description" : "Minha reinterpretação do MMORPG Tibia (1997) como um jogo Idle/Clicker. 100% jogável até o final proposto, que não é o conteudo todo do MMO.",
+        "description" : "Minha reinterpretação do MMORPG Tibia como um jogo Idle/Clicker. 100% jogável até o final proposto, que não é o conteudo todo do MMO.",
         "tags" : ["Godot", "Idle", "Clicker", "Tibia"]
     },
     "project_toku-anything" : {
@@ -30,7 +30,7 @@ projects = {
         "img" : "sutoku",
         "title" : "suTOKU",
         "status" : "Completo",
-        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku! Projeto encerrado, em Loop com os desafios anteriores.",
+        "description" : "Desafie diariamente seus conhecimentos sobre Tokusatsu nesse jogo inspirado por Sudoku! Encerrado, em Loop dos desafios já enviados.",
         "tags" : ["Godot", "Puzzle", "Tokusatsu", ""]
     },
     "project_dracomania" : {
