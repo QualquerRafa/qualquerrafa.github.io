@@ -8,6 +8,7 @@ projects = {
         "tags" : ["Godot", "Idle", "Clicker", "Tibia"]
     },
     "project_toku-anything" : {
+        "hide" : true,
         "url" : "https://bsky.app/profile/tokuanything.bsky.social",
         "img" : "toku_anything",
         "title" : "Tokusatsu Anything BOT",
@@ -16,6 +17,7 @@ projects = {
         "tags" : ["Python", "Bot", "Tokusatsu", ""]
      },
     "project_build" : {
+        "hide" : true,
         "url" : "https://qualquerrafa.github.io/build",
         "img" : "build",
         "title" : "Ciência em Kamen Rider Build",
